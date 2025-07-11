@@ -23,7 +23,7 @@ export default function NavMobile() {
 	}, [isOpen]);
 
 	return (
-		<div className="h-14 border-b border-border bg-background/95  w-full top-0 left-0 md:hidden flex px-4 pl-2">
+		<div className="h-14 border-b border-border bg-background/95  w-full top-0 left-0 lg:hidden flex px-4 pl-2">
 			<a
 				href="#hero"
 				className="flex items-center gap-2 cursor-pointer relative z-50"

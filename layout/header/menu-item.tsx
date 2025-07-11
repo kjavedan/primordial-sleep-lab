@@ -8,7 +8,7 @@ export default function MenuItem({
 }: {
 	label: string;
 	href: string;
-	onClick: () => void;
+	onClick?: () => void;
 }) {
 	return (
 		<motion.li
@@ -19,8 +19,8 @@ export default function MenuItem({
 		>
 			<a
 				href={href}
-				className="animated-underline text-xl font-bold text-background font-sans"
-				onClick={onClick}
+				className={`animated-underline  font-sans ${onClick ? "text-background text-xl font-bold" : "font-semibold"}`}
+				{...(onClick ? { onClick } : {})}
 			>
 				{label}
 			</a>

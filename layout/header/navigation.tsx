@@ -1,16 +1,7 @@
 import { motion } from "motion/react";
+import { navLinks } from "./data";
 import MenuItem from "./menu-item";
 import { navVariants } from "./varients";
-
-const navLinks = [
-	{ label: "Home", href: "#hero" },
-	{ label: "Services", href: "#services" },
-	{ label: "Quizzes", href: "#quiz" },
-	{ label: "Testimonials", href: "#testimonials" },
-	{ label: "About", href: "#about" },
-	{ label: "Blogs", href: "#blogs" },
-	{ label: "Contact", href: "#contact" },
-];
 
 export default function Navigation({ closeMenu }: { closeMenu: () => void }) {
 	return (
