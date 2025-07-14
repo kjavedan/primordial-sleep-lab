@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Lato, Playpen_Sans } from "next/font/google";
 import "./globals.css";
 
+import Moon from "@/components/moon";
+import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
 
@@ -31,9 +33,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${playpenSans.variable} ${lato.variable} antialiased`}>
-				<Header />
-				<main>{children}</main>
-				<Footer />
+				<ThemeProvider>
+					<Moon />
+					<Header />
+					<main>{children}</main>
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

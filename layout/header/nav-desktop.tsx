@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Image from "next/image";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { navLinks } from "./data";
 import MenuItem from "./menu-item";
 import { navVariants } from "./varients";
@@ -26,6 +27,7 @@ export default function NavDesktop() {
 						))}
 					</motion.ul>
 				</nav>
+				<ThemeToggle />
 			</div>
 		</header>
 	);

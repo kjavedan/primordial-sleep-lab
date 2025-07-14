@@ -10,7 +10,7 @@ export default function MenuToggle({
 	return (
 		<button
 			type="button"
-			className="relative z-10 cursor-pointer bg-white p-2 pt-3 rounded-full h-10 w-10 flex items-center justify-center"
+			className="relative z-10 cursor-pointer bg-foreground p-2 pt-3 rounded-full h-10 w-10 flex items-center justify-center"
 			onClick={toggle}
 		>
 			<svg

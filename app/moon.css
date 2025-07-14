@@ -1,0 +1,70 @@
+:root {
+	--primary-gold: #f5e27b;
+	--moon-color: #e6e6e6;
+
+	--star-glow: #f5e27b;
+	--moon-glow: rgba(230, 230, 230, 0.3);
+}
+
+.custom-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: -1;
+	background: var(--color-background);
+	overflow: hidden;
+}
+
+/* Moon with realistic color */
+.moon {
+	position: absolute;
+	top: 10%;
+	left: 12%;
+	width: 100px;
+	height: 100px;
+	background: var(--moon-color);
+	border-radius: 50%;
+	box-shadow: 0 0 30px var(--moon-glow);
+	animation: moonGlow 6s infinite alternate;
+	transition: transform 0.3s ease-out;
+}
+
+@media (min-width: 600px) {
+	.moon {
+		top: 15%;
+	}
+}
+
+.moon::before {
+	content: "";
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 12px;
+	height: 12px;
+	background: #d0d0d0;
+	border-radius: 50%;
+	box-shadow:
+		25px 8px 0 3px #d0d0d0,
+		-8px 20px 0 2px #d0d0d0;
+}
+
+@keyframes moonGlow {
+	0% {
+		box-shadow: 0 0 30px var(--moon-glow);
+	}
+	100% {
+		box-shadow: 0 0 50px rgba(255, 239, 116, 0.5);
+	}
+}
+
+/* Ensure content is above background */
+.content {
+	position: relative;
+	z-index: 1;
+	padding: 40px;
+	max-width: 1200px;
+	margin: 0 auto;
+}

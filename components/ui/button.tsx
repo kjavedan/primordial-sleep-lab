@@ -19,7 +19,7 @@ type ButtonProps = {
 	variant?: "default" | "destructive" | "outline" | "secondary" | "ghost";
 	className?: ClassValue;
 	rippleClassName?: ClassValue;
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	ref?: React.Ref<HTMLButtonElement>;
 	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -168,4 +168,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 	);
 });
 
-export default Button;
+export { Button };

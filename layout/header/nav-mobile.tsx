@@ -1,8 +1,9 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import MenuToggle from "./menu-toggle";
 import Navigation from "./navigation";
 import { sidebarVariants } from "./varients";
@@ -23,7 +24,7 @@ export default function NavMobile() {
 	}, [isOpen]);
 
 	return (
-		<header className="h-14 z-50 fixed w-full top-0 left-0 overflow-hidden lg:hidden flex justify-between p-2 border-b border-border bg-background/95">
+		<header className="h-14 z-50 fixed w-full top-0 left-0 overflow-hidden lg:hidden flex justify-between p-2 border-b border-border bg-background">
 			{/* Logo */}
 			<a
 				href="#hero"
@@ -37,14 +38,17 @@ export default function NavMobile() {
 			</a>
 
 			{/* Toggle button */}
-			<MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+			<div className="flex gap-4 items-center">
+				<ThemeToggle />
+				<MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+			</div>
 
 			{/* Navbar */}
 
 			<motion.nav
 				initial="closed"
 				animate={isOpen ? "open" : "closed"}
-				className={`fixed inset-0 bg-white`}
+				className="fixed inset-0 bg-foreground"
 				variants={sidebarVariants}
 			>
 				<Navigation closeMenu={() => setIsOpen(false)} />

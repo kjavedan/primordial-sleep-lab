@@ -8,7 +8,7 @@ export default function Path(props: PathProps) {
 		<motion.path
 			fill="transparent"
 			strokeWidth="3"
-			stroke="hsl(0, 0%, 18%)"
+			stroke="var(--background)"
 			strokeLinecap="round"
 			{...props}
 		/>

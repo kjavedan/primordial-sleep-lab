@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SectionHeader from "@/components/section-header";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardAction,
@@ -56,7 +56,7 @@ const services = [
 
 export default function Services() {
 	return (
-		<section id="services" className="container mx-auto px-2 lg:px-20">
+		<section id="services" className="container mx-auto px-2">
 			<SectionHeader title={"services"} />
 			<div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-6">
 				{services.map((service, idx) => (
@@ -97,9 +97,11 @@ function Service({
 				<Image
 					src={image}
 					alt={imageAlt}
-					width={200}
-					height={200}
-					className="w-full h-full object-cover"
+					placeholder="blur"
+					blurDataURL={image}
+					width={500}
+					height={500}
+					className="size-full object-cover"
 				/>
 			</CardImage>
 			<CardHeader>
@@ -108,7 +110,7 @@ function Service({
 			</CardHeader>
 			<CardFooter>
 				<CardAction>
-					<Button>start now</Button>
+					<Button size="lg">start now</Button>
 				</CardAction>
 			</CardFooter>
 		</Card>
