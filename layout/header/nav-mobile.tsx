@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import MenuToggle from "./menu-toggle";
@@ -23,7 +23,8 @@ export default function NavMobile() {
 	}, [isOpen]);
 
 	return (
-		<div className="h-14 border-b border-border bg-background/95  w-full top-0 left-0 lg:hidden flex px-4 pl-2">
+		<header className="h-14 z-50 fixed w-full top-0 left-0 overflow-hidden lg:hidden flex justify-between p-2 border-b border-border bg-background/95">
+			{/* Logo */}
 			<a
 				href="#hero"
 				className="flex items-center gap-2 cursor-pointer relative z-50"
@@ -34,15 +35,20 @@ export default function NavMobile() {
 					<span className="block text-xs font-normal">Sleep Lab</span>
 				</span>
 			</a>
+
+			{/* Toggle button */}
+			<MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
+
+			{/* Navbar */}
+
 			<motion.nav
-				initial={false}
+				initial="closed"
 				animate={isOpen ? "open" : "closed"}
-				className="fixed inset-0 size-full"
+				className={`fixed inset-0 bg-white`}
+				variants={sidebarVariants}
 			>
-				<motion.div className="bg-white size-full" variants={sidebarVariants} />
 				<Navigation closeMenu={() => setIsOpen(false)} />
-				<MenuToggle toggle={() => setIsOpen(!isOpen)} />
 			</motion.nav>
-		</div>
+		</header>
 	);
 }

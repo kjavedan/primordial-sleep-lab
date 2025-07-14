@@ -1,11 +1,7 @@
-import type { Variants } from "motion/react";
-import { motion } from "motion/react";
+import { type MotionProps, motion } from "motion/react";
+import type { SVGProps } from "react";
 
-interface PathProps {
-	d?: string;
-	variants: Variants;
-	transition?: { duration: number };
-}
+type PathProps = SVGProps<SVGPathElement> & MotionProps;
 
 export default function Path(props: PathProps) {
 	return (

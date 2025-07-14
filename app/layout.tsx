@@ -8,6 +8,7 @@ import Header from "@/layout/header";
 const playpenSans = Playpen_Sans({
 	variable: "--font-heading",
 	subsets: ["latin"],
+	weight: ["400", "700", "800"],
 });
 
 const lato = Lato({

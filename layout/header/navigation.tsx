@@ -6,7 +6,7 @@ import { navVariants } from "./varients";
 export default function Navigation({ closeMenu }: { closeMenu: () => void }) {
 	return (
 		<motion.ul
-			className="absolute w-72 top-20 p-8 pl-12.5"
+			className="absolute w-72 h-full top-20 p-8 pl-12.5"
 			variants={navVariants}
 		>
 			{navLinks.map((link) => (

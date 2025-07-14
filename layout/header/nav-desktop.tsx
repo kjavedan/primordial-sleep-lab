@@ -7,7 +7,7 @@ import { navVariants } from "./varients";
 export default function NavDesktop() {
 	return (
 		// Wrapper div with border and responsive visibility
-		<div className="hidden lg:block w-full border-b border-border backdrop-blur-sm">
+		<header className="hidden lg:block sticky top-0 left-0 z-50 w-full border-b border-border backdrop-blur-3xl">
 			<div className="container mx-auto w-full flex justify-between h-18 items-center">
 				<a
 					href="#hero"
@@ -27,6 +27,6 @@ export default function NavDesktop() {
 					</motion.ul>
 				</nav>
 			</div>
-		</div>
+		</header>
 	);
 }
