@@ -109,7 +109,7 @@ export default function Testimonials() {
 	}, [api]);
 
 	return (
-		<section id="testimonials" className="container px-2 mx-auto">
+		<section id="testimonials" className="lg:container  mx-auto">
 			<SectionHeader title="testimonials" />
 			<div className="relative">
 				<Carousel
@@ -119,12 +119,8 @@ export default function Testimonials() {
 							delay: 10000,
 						}),
 					]}
-					opts={{
-						align: "start",
-						loop: true,
-					}}
 				>
-					<CarouselContent className="pb-6 pl-2">
+					<CarouselContent className="pb-6 pl-2 px-2">
 						{testimonials.map((testimonial) => (
 							<CarouselItem
 								key={testimonial.id}

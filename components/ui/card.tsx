@@ -18,7 +18,7 @@ function CardMedia({ className, ...props }: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="card-image"
-			className={cn("h-60 xl:h-80 rounded-4xl overflow-hidden", className)}
+			className={cn("h-60 xl:h-70 rounded-4xl overflow-hidden", className)}
 			{...props}
 		/>
 	);
@@ -41,7 +41,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="card-title"
-			className={cn("font-semibold font-sans text-2xl", className)}
+			className={cn("font-semibold font-sans text-xl", className)}
 			{...props}
 		/>
 	);

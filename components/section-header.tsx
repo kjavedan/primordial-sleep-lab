@@ -24,7 +24,7 @@ export default function SectionHeader({
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
 		>
-			<div className="w-fit flex flex-col items-center gap-2">
+			<div className="w-fit flex flex-col items-center gap-3">
 				<h2 className="text-5xl lg:text-7xl capitalize">{title}</h2>
 				<Image
 					src={"/underline.svg"}
