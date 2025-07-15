@@ -14,7 +14,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
 	);
 }
 
-function CardImage({ className, ...props }: React.ComponentProps<"div">) {
+function CardMedia({ className, ...props }: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="card-image"
@@ -92,7 +92,7 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
 
 export {
 	Card,
-	CardImage,
+	CardMedia,
 	CardHeader,
 	CardTitle,
 	CardDescription,

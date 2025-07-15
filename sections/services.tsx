@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import Image from "next/image";
 import SectionHeader from "@/components/section-header";
 import { Button } from "@/components/ui/button";
@@ -7,7 +9,7 @@ import {
 	CardDescription,
 	CardFooter,
 	CardHeader,
-	CardImage,
+	CardMedia,
 	CardTitle,
 } from "@/components/ui/card";
 
@@ -82,6 +84,8 @@ type ServiceProps = {
 	image: string;
 	imageAlt: string;
 	className?: string;
+	idx?: number;
+	isLargeScreen?: boolean;
 };
 
 function Service({
@@ -92,27 +96,38 @@ function Service({
 	className,
 }: ServiceProps) {
 	return (
-		<Card className={className}>
-			<CardImage>
-				<Image
-					src={image}
-					alt={imageAlt}
-					placeholder="blur"
-					blurDataURL={image}
-					width={500}
-					height={500}
-					className="size-full object-cover"
-				/>
-			</CardImage>
-			<CardHeader>
-				<CardTitle>{title}</CardTitle>
-				<CardDescription>{description}</CardDescription>
-			</CardHeader>
-			<CardFooter>
-				<CardAction>
-					<Button size="lg">start now</Button>
-				</CardAction>
-			</CardFooter>
-		</Card>
+		<motion.div
+			initial={{ opacity: 0, y: 40 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, amount: 0.2 }}
+			transition={{
+				duration: 0.6,
+				ease: "easeOut",
+			}}
+			className={className}
+		>
+			<Card className="size-full">
+				<CardMedia>
+					<Image
+						src={image}
+						alt={imageAlt}
+						placeholder="blur"
+						blurDataURL={image}
+						width={500}
+						height={500}
+						className="size-full object-cover"
+					/>
+				</CardMedia>
+				<CardHeader>
+					<CardTitle>{title}</CardTitle>
+					<CardDescription>{description}</CardDescription>
+				</CardHeader>
+				<CardFooter>
+					<CardAction>
+						<Button size="lg">start now</Button>
+					</CardAction>
+				</CardFooter>
+			</Card>
+		</motion.div>
 	);
 }

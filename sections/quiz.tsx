@@ -7,7 +7,7 @@ import {
 	CardDescription,
 	CardFooter,
 	CardHeader,
-	CardImage,
+	CardMedia,
 	CardTitle,
 } from "@/components/ui/card";
 import {
@@ -57,7 +57,7 @@ export default function Quiz() {
 								className="basis-8/9 md:basis-1/2 lg:basis-1/3"
 							>
 								<Card>
-									<CardImage>
+									<CardMedia>
 										<Image
 											src={quiz.image}
 											alt={quiz.imageAlt}
@@ -65,7 +65,7 @@ export default function Quiz() {
 											height={200}
 											className="w-full h-full object-cover"
 										/>
-									</CardImage>
+									</CardMedia>
 									<CardHeader>
 										<CardTitle>{quiz.title}</CardTitle>
 										<CardDescription>{quiz.description}</CardDescription>
@@ -80,7 +80,7 @@ export default function Quiz() {
 						))}
 					</CarouselContent>
 					{/* Show navigation buttons on large screens as well */}
-					<div className="hidden md:block mr-4 absolute bottom-0 left-0 right-0">
+					<div className="hidden md:block mr-4 absolute -top-12 left-0 right-0">
 						<CarouselPrevious />
 						<CarouselNext />
 					</div>

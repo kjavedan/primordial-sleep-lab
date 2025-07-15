@@ -1,5 +1,6 @@
 import About from "@/sections/about";
 import Blogs from "@/sections/blogs";
+import BookMeeting from "@/sections/book-meeting";
 import Contact from "@/sections/contact";
 import Hero from "@/sections/hero";
 import Quiz from "@/sections/quiz";
@@ -14,6 +15,7 @@ export default function Home() {
 			<Quiz />
 			<About />
 			<Testimonials />
+			<BookMeeting />
 			<Blogs />
 			<Contact />
 		</div>
