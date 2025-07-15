@@ -1,0 +1,44 @@
+export function InstagramIcon({ className = "", ...props }) {
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			stroke="#ffffff"
+			className="hover:bg-[#E4405F] cursor-pointer rounded-2xl p-1 transition-colors duration-300"
+			{...props}
+		>
+			<title>instagram</title>
+			<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+			<g
+				id="SVGRepo_tracerCarrier"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			></g>
+			<g id="SVGRepo_iconCarrier">
+				{" "}
+				<path
+					d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z"
+					fill="var(--primary)"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				></path>{" "}
+				<path
+					d="M12 15.5C13.933 15.5 15.5 13.933 15.5 12C15.5 10.067 13.933 8.5 12 8.5C10.067 8.5 8.5 10.067 8.5 12C8.5 13.933 10.067 15.5 12 15.5Z"
+					fill="var(--primary)"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				></path>{" "}
+				<path
+					d="M17.6361 7H17.6477"
+					fill="var(--primary)"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				></path>{" "}
+			</g>
+		</svg>
+	);
+}

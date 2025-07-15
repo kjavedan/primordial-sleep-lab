@@ -1,7 +1,6 @@
 // Structured testimonials data
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
 import SectionHeader from "@/components/section-header";
 import { Card, CardContent, CardFooter, CardMedia } from "@/components/ui/card";
@@ -112,14 +111,7 @@ export default function Testimonials() {
 		<section id="testimonials" className="lg:container  mx-auto">
 			<SectionHeader title="testimonials" />
 			<div className="relative">
-				<Carousel
-					setApi={setApi}
-					plugins={[
-						Autoplay({
-							delay: 10000,
-						}),
-					]}
-				>
+				<Carousel setApi={setApi}>
 					<CarouselContent className="pb-6 pl-2 px-2">
 						{testimonials.map((testimonial) => (
 							<CarouselItem
