@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import Image from "next/image";
+import FadeInOnView from "@/components/animation/fade-in";
 import SectionHeader from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,49 +13,7 @@ import {
 	CardMedia,
 	CardTitle,
 } from "@/components/ui/card";
-
-const services = [
-	{
-		id: 1,
-		title: "One on One Sleep Coaching",
-		description:
-			"Customized sleep programs with tools, resources, and one-on-one support. I'll help interpret your sleep data and guide you to optimal sleep quality.",
-		image: "/one-on-one.png",
-		imageAlt: "One on One Sleep Coaching",
-	},
-	{
-		id: 2,
-		title: "Couples Sleep Coaching",
-		description:
-			"Most couples struggle to sleep well together, one always ends up sacrificing sleep. With my couples sleep coaching, I help you understand what's happening at night and improve sleep for both partners based on their individual needs.",
-		image: "/couples.png",
-		imageAlt: "Couples Sleep Coaching",
-	},
-	{
-		id: 5,
-		title: "Companies Sleep Coaching",
-		description:
-			"Optimize your sleep with a my online video course. I'll provide you with all the necessary tools, resources so you can do it yourself and improve your sleep in a more cost-effective way.",
-		image: "/staff.png",
-		imageAlt: "Companies Sleep Coaching",
-	},
-	{
-		id: 3,
-		title: "Group Sleep Coaching",
-		description:
-			"A more fun and accessible way to get the sleep coaching you need. You'll connect with others facing the same struggles in a supportive community full of motivation and accountability.",
-		image: "/group.png",
-		imageAlt: "Group Sleep Coaching",
-	},
-	{
-		id: 4,
-		title: "Sleep to thrive",
-		description:
-			"Are you a company that truly cares about your team? My program helps your staff become more focused, productive, and energized—by teaching them to sleep like cavemen. Boost performance, profit, and create a workplace full of healthier, happier people.",
-		image: "/running.png",
-		imageAlt: "Sleep to thrive",
-	},
-];
+import { services } from "@/data";
 
 export default function Services() {
 	return (
@@ -64,6 +23,7 @@ export default function Services() {
 				{services.map((service, idx) => (
 					<Service
 						key={service.id}
+						idx={idx}
 						title={service.title}
 						description={service.description}
 						image={service.image}
@@ -89,6 +49,7 @@ type ServiceProps = {
 };
 
 function Service({
+	idx,
 	title,
 	description,
 	image,
@@ -96,16 +57,7 @@ function Service({
 	className,
 }: ServiceProps) {
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 40 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.2 }}
-			transition={{
-				duration: 0.6,
-				ease: "easeOut",
-			}}
-			className={className}
-		>
+		<FadeInOnView className={className} delay={idx * 0.1}>
 			<Card className="size-full">
 				<CardMedia>
 					<Image
@@ -124,10 +76,12 @@ function Service({
 				</CardHeader>
 				<CardFooter>
 					<CardAction>
-						<Button size="lg">start now</Button>
+						<Button size="lg" href="#meet">
+							start now
+						</Button>
 					</CardAction>
 				</CardFooter>
 			</Card>
-		</motion.div>
+		</FadeInOnView>
 	);
 }

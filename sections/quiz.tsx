@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import FadeInOnView from "@/components/animation/fade-in";
 import SectionHeader from "@/components/section-header";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,38 +19,13 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
+import { quizzes } from "@/data";
 
-const quizzes = [
-	{
-		id: 1,
-		title: "How your sleep affecting you?",
-		description:
-			"Discover how your sleep patterns impact your daily life and wellbeing.",
-		image: "/dream.png",
-		imageAlt: "Sleep Impact Quiz",
-	},
-	{
-		id: 2,
-		title: "Do you know your chronotype?",
-		description:
-			"Find out if you're a morning lark, night owl, or something in between.",
-		image: "/owel.png",
-		imageAlt: "Chronotype Quiz",
-	},
-	{
-		id: 3,
-		title: "Might I have a sleep disorder?",
-		description:
-			"Take this assessment to identify potential sleep disorder warning signs.",
-		image: "/screen-light.png",
-		imageAlt: "Sleep Disorder Quiz",
-	},
-];
 export default function Quiz() {
 	return (
 		<section id="quiz" className="lg:container mx-auto">
 			<SectionHeader title="Quizzes" />
-			<div className="relative">
+			<FadeInOnView delay={0.4} className="relative">
 				<Carousel>
 					<CarouselContent className="pb-6 pl-2">
 						{quizzes.map((quiz) => (
@@ -72,7 +49,9 @@ export default function Quiz() {
 									</CardHeader>
 									<CardFooter>
 										<CardAction>
-											<Button size="lg">Take Quiz</Button>
+											<Button size="lg" href={quiz.href}>
+												Take Quiz
+											</Button>
 										</CardAction>
 									</CardFooter>
 								</Card>
@@ -85,7 +64,7 @@ export default function Quiz() {
 						<CarouselNext />
 					</div>
 				</Carousel>
-			</div>
+			</FadeInOnView>
 		</section>
 	);
 }

@@ -1,45 +1,42 @@
 import type { Metadata } from "next";
 import { Lato, Playpen_Sans } from "next/font/google";
 import "./globals.css";
-
-import Moon from "@/components/moon";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
 
 const playpenSans = Playpen_Sans({
-	variable: "--font-heading",
-	subsets: ["latin"],
-	weight: ["400", "700", "800"],
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400", "700", "800"],
 });
 
 const lato = Lato({
-	variable: "--font-body",
-	subsets: ["latin"],
-	weight: ["400", "700"],
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
-	title: "Sleep Lab - Better Sleep, Better Life",
-	description:
-		"Sleep like your ancestors. Wake up healthier, happier, and more energized every day. Professional sleep coaching services.",
+  title: "Sleep Lab - Better Sleep, Better Life",
+  description:
+    "Sleep like your ancestors. Wake up healthier, happier, and more energized every day. Professional sleep coaching services.",
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang="en">
-			<body className={`${playpenSans.variable} ${lato.variable} antialiased`}>
-				<ThemeProvider>
-					<Moon />
-					<Header />
-					<main>{children}</main>
-					<Footer />
-				</ThemeProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en">
+      <body className={`${playpenSans.variable} ${lato.variable} antialiased`}>
+        <ThemeProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
 }

@@ -46,7 +46,7 @@ export default function Hero() {
 						energized every day.
 					</p>
 
-					<Button size="xl" className="mt-8">
+					<Button size="xl" className="mt-8" href="#meet">
 						Start Now
 					</Button>
 				</div>

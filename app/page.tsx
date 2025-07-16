@@ -1,3 +1,4 @@
+import Moon from "@/components/moon";
 import About from "@/sections/about";
 import Blogs from "@/sections/blogs";
 import BookMeeting from "@/sections/book-meeting";
@@ -8,16 +9,17 @@ import Services from "@/sections/services";
 import Testimonials from "@/sections/testimonials";
 
 export default function Home() {
-	return (
-		<div className="">
-			<Hero />
-			<Services />
-			<Quiz />
-			<About />
-			<Testimonials />
-			<BookMeeting />
-			<Blogs />
-			<Contact />
-		</div>
-	);
+  return (
+    <div className="">
+      <Moon />
+      <Hero />
+      <Services />
+      <Quiz />
+      <About />
+      <Testimonials />
+      <BookMeeting />
+      <Blogs />
+      <Contact />
+    </div>
+  );
 }

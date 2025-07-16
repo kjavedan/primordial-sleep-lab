@@ -1,7 +1,8 @@
 "use client";
-import { motion } from "motion/react";
+
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import FadeInOnView from "./animation/fade-in";
 
 type PropsType = {
 	title: string;
@@ -15,14 +16,11 @@ export default function SectionHeader({
 	className,
 }: PropsType) {
 	return (
-		<motion.div
+		<FadeInOnView
 			className={cn(
 				`flex justify-center lg:justify-${position} mb-6`,
 				className,
 			)}
-			initial={{ opacity: 0, y: 20 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true }}
 		>
 			<div className="w-fit flex flex-col items-center gap-3">
 				<h2 className="text-5xl lg:text-7xl capitalize">{title}</h2>
@@ -34,6 +32,6 @@ export default function SectionHeader({
 					className="w-full"
 				/>
 			</div>
-		</motion.div>
+		</FadeInOnView>
 	);
 }

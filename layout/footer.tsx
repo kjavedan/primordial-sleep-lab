@@ -3,6 +3,7 @@ import Image from "next/image";
 import { InstagramIcon } from "@/components/icons/instagram";
 import { LinkedinIcon } from "@/components/icons/linkedin";
 import { TiktokIcon } from "@/components/icons/tiktok";
+import { navLinks } from "./header/data";
 
 export default function Footer() {
 	return (
@@ -53,20 +54,13 @@ export default function Footer() {
 							Links
 						</h3>
 						<ul className="space-y-3">
-							{[
-								"Services",
-								"Quizzes",
-								"Testimonials",
-								"About",
-								"Blogs",
-								"Contact",
-							].map((link) => (
-								<li key={link}>
+							{navLinks.map((nav) => (
+								<li key={nav.href}>
 									<a
-										href={`#${link.toLowerCase().replace(" ", "-")}`}
+										href={nav.href}
 										className="text-base hover:underline text-foreground hover:text-primary transition-colors"
 									>
-										{link}
+										{nav.label}
 									</a>
 								</li>
 							))}

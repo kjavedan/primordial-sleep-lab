@@ -22,6 +22,7 @@ type ButtonProps = {
 	children?: React.ReactNode;
 	ref?: React.Ref<HTMLButtonElement>;
 	onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	href?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
@@ -33,6 +34,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 		className,
 		rippleClassName,
 		onClick,
+		href,
 		...props
 	},
 	ref,
@@ -130,8 +132,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 			if (onClick) {
 				onClick(event);
 			}
+			if (!event.defaultPrevented && href) {
+				window.location.href = href;
+			}
 		},
-		[createRipple, onClick],
+		[createRipple, onClick, href],
 	);
 
 	return (

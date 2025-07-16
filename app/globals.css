@@ -124,6 +124,7 @@ body {
 
 #hero {
 	/* padding-top: 0; */
+	scroll-margin-top: 80px;
 }
 
 /* Floating Z animation */
