@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "motion/react";
+
 import Image from "next/image";
 import FadeInOnView from "@/components/animation/fade-in";
 import SectionHeader from "@/components/section-header";
@@ -44,7 +44,7 @@ type ServiceProps = {
 	image: string;
 	imageAlt: string;
 	className?: string;
-	idx?: number;
+	idx: number;
 	isLargeScreen?: boolean;
 };
 

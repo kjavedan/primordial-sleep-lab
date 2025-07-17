@@ -92,7 +92,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 	>([]);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
-	useImperativeHandle(ref, () => buttonRef.current);
+	useImperativeHandle(ref, () => buttonRef.current!);
 
 	const createRipple = useCallback(
 		(event: React.MouseEvent<HTMLButtonElement>) => {
@@ -146,7 +146,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
 			whileTap={{ scale: 0.95 }}
 			className={cn(buttonVariants({ variant, size, className }))}
 			onClick={handleClick}
-			{...props}
+			{...(props as any)}
 		>
 			{ripples.map((ripple) => (
 				<motion.span

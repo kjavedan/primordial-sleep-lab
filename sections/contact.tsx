@@ -1,26 +1,35 @@
 "use client";
 
+import type React from "react";
 import { useState } from "react";
 import FadeInOnView from "@/components/animation/fade-in";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+type FormData = {
+	name: string;
+	email: string;
+	message: string;
+};
+
 export default function Contact() {
-	const [formData, setFormData] = useState({
+	const [formData, setFormData] = useState<FormData>({
 		name: "",
 		email: "",
 		message: "",
 	});
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		// Contact form logic would go here
 		console.log("Contact form submission:", formData);
 		setFormData({ name: "", email: "", message: "" });
 	};
 
-	const handleChange = (e) => {
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+	) => {
 		setFormData((prev) => ({
 			...prev,
 			[e.target.name]: e.target.value,

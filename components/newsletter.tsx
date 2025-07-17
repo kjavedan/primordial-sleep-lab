@@ -1,5 +1,6 @@
 "use client";
 
+import type React from "react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,7 +9,7 @@ export function Newsletter() {
 	const [email, setEmail] = useState("");
 	const [name, setName] = useState("");
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		// Newsletter signup logic would go here
 		console.log("Newsletter signup:", { name, email });

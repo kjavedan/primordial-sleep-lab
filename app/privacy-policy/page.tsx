@@ -16,7 +16,7 @@ export default function () {
 	const { content } = matter(fileContent);
 
 	return (
-		<div className="max-w-3xl mx-auto px-4">
+		<div className="max-w-3xl mx-auto px-4 pt-20 lg:pt-0">
 			<article className="prose-gray prose-lg prose-h1:font-bold prose-h2:font-bold prose-h3:font-bold prose-a:underline prose-ul:list-disc prose-ol:list-decimal prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-700 dark:prose-blockquote:border-gray-700 dark:prose-blockquote:text-gray-300 size-full px-4 pt-6 pb-20 lg:px-0">
 				<Markdown>{content}</Markdown>
 			</article>
