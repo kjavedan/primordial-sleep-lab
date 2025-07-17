@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import Link from "next/link";
 import { itemVariants } from "./varients";
 
 export default function MenuItem({
@@ -17,13 +18,13 @@ export default function MenuItem({
 			whileTap={{ scale: 0.98 }}
 			className="p-4"
 		>
-			<a
+			<Link
 				href={href}
 				className={`animated-underline  font-sans ${onClick ? "text-background text-xl font-bold" : "font-semibold"}`}
 				{...(onClick ? { onClick } : {})}
 			>
 				{label}
-			</a>
+			</Link>
 		</motion.li>
 	);
 }

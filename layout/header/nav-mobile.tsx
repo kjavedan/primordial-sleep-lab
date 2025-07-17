@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import MenuToggle from "./menu-toggle";
@@ -26,8 +27,8 @@ export default function NavMobile() {
 	return (
 		<header className="h-14 z-50 fixed w-full top-0 left-0 overflow-hidden lg:hidden flex justify-between p-2 border-b border-border bg-background">
 			{/* Logo */}
-			<a
-				href="#hero"
+			<Link
+				href={"/#hero"}
 				className="flex items-center gap-2 cursor-pointer relative z-50"
 			>
 				<Image src={"/logo.png"} alt="logo" width={50} height={50} />
@@ -35,7 +36,7 @@ export default function NavMobile() {
 					Primordial
 					<span className="block text-xs font-normal">Sleep Lab</span>
 				</span>
-			</a>
+			</Link>
 
 			{/* Toggle button */}
 			<div className="flex gap-4 items-center">

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { InstagramIcon } from "@/components/icons/instagram";
 import { LinkedinIcon } from "@/components/icons/linkedin";
 import { TiktokIcon } from "@/components/icons/tiktok";
@@ -56,12 +57,12 @@ export default function Footer() {
 						<ul className="space-y-3">
 							{navLinks.map((nav) => (
 								<li key={nav.href}>
-									<a
+									<Link
 										href={nav.href}
 										className="text-base hover:underline text-foreground hover:text-primary transition-colors"
 									>
 										{nav.label}
-									</a>
+									</Link>
 								</li>
 							))}
 						</ul>
@@ -74,20 +75,20 @@ export default function Footer() {
 						</h3>
 						<ul className="space-y-3">
 							<li>
-								<a
-									href="#"
+								<Link
+									href={"/privacy-policy"}
 									className="text-base text-foreground hover:underline transition-colors"
 								>
 									Terms and Conditions
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									href={"/privacy-policy"}
 									className="text-base text-foreground hover:underline transition-colors"
 								>
 									Privacy Policy
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</div>
